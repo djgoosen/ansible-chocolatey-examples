@@ -1,0 +1,13 @@
+---
+- name: Remove Google Chrome via Chocolatey
+  gather_facts: no
+  hosts: all
+  collections:
+    - chocolatey.chocolatey
+  vars:
+    chocolatey_pkg: "googlechrome"
+  tasks:
+  - name: "Remove {{ chocolatey_pkg }} Chocolatey package"
+    chocolatey.chocolatey.win_chocolatey:
+      name: "{{ chocolatey_pkg }}"
+      state: absent
