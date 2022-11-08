@@ -1,0 +1,8 @@
+---
+collections:
+  - name: https://github.com/ansible-collections/community.windows.git
+    type: git
+
+  - name: chocolatey.chocolatey
+    source: https://galaxy.ansible.com
+    version: 1.2.0
