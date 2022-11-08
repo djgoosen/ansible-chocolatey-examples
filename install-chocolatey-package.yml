@@ -1,0 +1,15 @@
+---
+# $ choco uninstall googlechrome # for quick re-do
+- name: Install Package via Chocolatey
+  gather_facts: no
+  hosts: all
+  collections:
+    - chocolatey.chocolatey
+  vars:
+    chocolatey_pkg: "googlechrome"
+  tasks:
+  - name: "Install {{ chocolatey_pkg }} Chocolatey package"
+    chocolatey.chocolatey.win_chocolatey:
+      name: "{{ chocolatey_pkg }}"
+      state: present
+      ignore_checksums: yes
